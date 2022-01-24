@@ -1,0 +1,37 @@
+.site-header {
+  padding: 10px 0;
+  @media (max-width: 768px) {
+    // display: none;
+  }
+
+  .site-header-left {
+    .logo {
+      display: inline-block;
+
+      img {
+        height: 28px;
+        // max-height: 37px;
+        // width: 176px;
+        // max-width: 100%;
+      }
+    }
+  }
+
+  .site-header-right {
+    text-align: right;
+    @media (max-width: 768px) {
+      // display: none;
+    }
+    .app-store-logo {
+      display: inline-block;
+
+      img {
+        height: 28px;
+        // max-height: 48px;
+        // width: auto;
+        // max-width: 100%;
+        // border-radius: 9px;
+      }
+    }
+  }
+}

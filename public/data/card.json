@@ -1,0 +1,26 @@
+[
+  {
+    "card_name": "Color",
+    "words": ["able", "run", "am", "any", "bad", "be", "before", "bell"],
+    "image": "colorstar-opt.jpg",
+    "color": "#EEF8E6"
+  },
+  {
+    "card_name": "Food",
+    "words": ["ago", "act"],
+    "image": "istockphoto-1155240408-612x612.jpg",
+    "color": "#FBE4EA"
+  },
+  {
+    "card_name": "Animals",
+    "words": ["also", "act"],
+    "image": "r9d8_8p6c_160924_preview.jpg",
+    "color": "#e7e4fb"
+  },
+  {
+    "card_name": "Numbers",
+    "words": ["also", "act"],
+    "image": "depositphotos_27647955-stock-photo-colorful-numbers.jpg",
+    "color": "#f8fbe4"
+  }
+]

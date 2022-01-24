@@ -1,0 +1,25 @@
+@import '../../Fonts/fonts';
+.btn-primary-custom {
+  color: #fff;
+  background-color: #434ff1;
+  border-color: #434ff1;
+  font-family: 'SF Compact Display', sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  border-radius: 10px;
+  padding: 0.625rem 1.5rem;
+
+  margin-top: 36px;
+  margin-bottom: 20px;
+}
+
+.common-page {
+  padding: 30px 0 60px 0;
+  .common-page-title {
+    font-family: 'SF Pro Display', sans-serif;
+    font-size: 36px;
+    margin-bottom: 30px;
+  }
+  .common-page-body {
+  }
+}
