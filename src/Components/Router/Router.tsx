@@ -5,28 +5,48 @@ import Home from '../Home/Home';
 import AboutUs from '../AboutUs/AboutUs';
 import Privacy from '../Privacy/Privacy';
 import Terms from '../Terms/Terms';
+import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
 import CategoryCardItem from '../CategoryCardItem/CategoryCardItem';
+import CategoryPage from '../CategoryPage/CategoryPage';
+import PhraseItem from '../PhraseItem/PhraseItem';
+import PhrasePage from '../PhrasePage/PhrasePage';
+import NotFoundPage from '../NotFoundPage/NotFoundPage';
 
 const Router: React.FunctionComponent = () => {
   return (
     <BrowserRouter basename="/">
+      <Header />
       <Switch>
-        <Route path="/about-us">
+        <Route exact path="/about-us">
           <AboutUs />
         </Route>
-        <Route path="/privacy">
+        <Route exact path="/privacy">
           <Privacy />
         </Route>
-        <Route path="/terms">
+        <Route exact path="/terms">
           <Terms />
         </Route>
-        <Route path="/category/:categoryName">
+        <Route exact path="/wordCategory/:categoryName">
           <CategoryCardItem />
         </Route>
-        <Route path="/">
+        <Route exact path="/wordCategory">
+          <CategoryPage />
+        </Route>
+        <Route exact path="/phraseCategory/:phraseName">
+          <PhraseItem />
+        </Route>
+        <Route exact path="/phraseCategory">
+          <PhrasePage />
+        </Route>
+        <Route exact path="/">
           <Home />
         </Route>
+        <Route path="*">
+          <NotFoundPage />
+        </Route>
       </Switch>
+      <Footer />
     </BrowserRouter>
   );
 };

@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './style.scss';
 import { Container, Table, Row, Col } from 'reactstrap';
-import { ICategory } from './Category.types';
 import { Link, useParams } from 'react-router-dom';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
@@ -12,20 +11,24 @@ import Defaultwordicon from '../../utils/defaultwordicon';
 import axios from 'axios';
 import getcolorfromword from '../../utils/getcolorfromword';
 
-const CategoryCardItem: React.FunctionComponent = () => {
-  // @ts-ignore
-  const { categoryName } = useParams();
-  let data: any = JSON.parse(sessionStorage.getItem('wordCategories') as string);
-  data = data?.find((dt: any) => dt.card_name.toLowerCase() === categoryName.toLowerCase());
-  const [words, setWords] = useState<any[]>();
+const CategoryCardItem = () => {
+  const { phraseName } = useParams();
+  let data = JSON.parse(sessionStorage.getItem('phrasesCategories'));
+  data = data?.find(
+    (dt) => dt.card_name.toLowerCase().replaceAll(' ', '-') === phraseName.toLowerCase().replaceAll(' ', '-')
+  );
+  const [phrases, setPhrases] = useState();
+  console.log(data);
 
-  const getWords = async (wordlist: any) => {
-    let wordsincat: any = [];
+  const getWords = async (wordlist) => {
+    let wordsincat = [];
     for (let i = 0; i < wordlist.length; i++) {
-      const el = wordlist[i];
+      let el = wordlist[i];
+      el = el.toLowerCase().replaceAll(' ', '-');
+      console.log(el);
       await axios
         .get(
-          `/data/words/${el}.json`
+          `/data/phrases/${el}.json`
           // , {
           //   headers: {
           //     'Content-Type': 'application/json',
@@ -33,18 +36,18 @@ const CategoryCardItem: React.FunctionComponent = () => {
           //   },
           // }
         )
-        .then((data: any) => {
+        .then((data) => {
           wordsincat.push(data.data);
         })
-        .catch((e: Error) => {
+        .catch((e) => {
           console.error(e);
         });
     }
 
-    setWords(wordsincat);
+    setPhrases(wordsincat);
   };
   useEffect(() => {
-    getWords(data.words);
+    getWords(data.phrases);
   }, []);
 
   return (
@@ -52,15 +55,15 @@ const CategoryCardItem: React.FunctionComponent = () => {
       <Container>
         <div className="common-page">
           <h1 className="common-page-title">
-            Words By {categoryName}
+            Words By {phraseName}
             <Link className="backToHome float-end" to="/">
               Back to Home
             </Link>
           </h1>
           <Row className="mb-5 justify-content-center_item">
-            {words &&
-              words?.map((w: any, k: any) => {
-                let { English, Farsi, Transliteration, Farsi_Audio } = w;
+            {phrases &&
+              phrases?.map((p, k) => {
+                let { English, Farsi, Transliteration, Farsi_Audio } = p;
                 return (
                   <Col sm={3} xs={6} key={k} className="mb-4">
                     <div

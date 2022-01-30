@@ -1,8 +1,8 @@
 import React from 'react';
 import './style.scss';
+import { Link } from 'react-router-dom';
 import { Container, Row, Col } from 'reactstrap';
 import Logo from '../../Images/logoipsum.svg';
-import { Link } from 'react-router-dom';
 
 const Header: React.FunctionComponent = () => {
   return (
