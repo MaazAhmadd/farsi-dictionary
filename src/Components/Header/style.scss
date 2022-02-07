@@ -39,7 +39,7 @@
       }
     }
     .auth-btn {
-      margin-bottom: 5px;
+      // margin-bottom: 5px;
       // display: flex;
       // align-items: center;
       background: transparent;
@@ -52,6 +52,10 @@
         margin-left: 5px;
         margin-bottom: 5px;
       }
+    }
+    .auth-btn:hover {
+      color: #fff;
+      background-color: #000;
     }
   }
 }

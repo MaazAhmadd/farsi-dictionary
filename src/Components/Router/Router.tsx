@@ -6,6 +6,8 @@ import AboutUs from '../AboutUs/AboutUs';
 import Privacy from '../Privacy/Privacy';
 import Terms from '../Terms/Terms';
 import Header from '../Header/Header';
+import Login from '../Login/Login';
+import Signup from '../Signup/Signup';
 import Footer from '../Footer/Footer';
 import CategoryCardItem from '../CategoryCardItem/CategoryCardItem';
 import CategoryPage from '../CategoryPage/CategoryPage';
@@ -23,6 +25,12 @@ const Router: React.FunctionComponent = () => {
         </Route>
         <Route exact path="/privacy">
           <Privacy />
+        </Route>
+        <Route exact path="/login">
+          <Login />
+        </Route>
+        <Route exact path="/signup">
+          <Signup />
         </Route>
         <Route exact path="/terms">
           <Terms />

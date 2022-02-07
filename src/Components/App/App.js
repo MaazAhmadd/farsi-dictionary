@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './style.scss';
 import Router from '../Router/Router';
 import axios from 'axios';
+import { Toaster } from 'react-hot-toast';
 
 const App = () => {
   const [status, setStatus] = useState(false);
@@ -28,6 +29,7 @@ const App = () => {
 
   return status ? (
     <div className="">
+      <Toaster position="top-center" reverseOrder={false} />
       <Router />
     </div>
   ) : (

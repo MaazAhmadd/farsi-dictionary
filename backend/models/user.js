@@ -25,7 +25,6 @@ const userSchema = new mongoose.Schema({
   fav_words: {
     type: Array,
     required: true,
-    unique: true,
   },
   isAdmin: Boolean,
 });

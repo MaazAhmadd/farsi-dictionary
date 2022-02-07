@@ -1,0 +1,25 @@
+.signup-wrapper {
+  margin: 5% auto;
+  padding: 4%;
+  width: 30%;
+  height: 100%;
+  background-color: #f5f5f5;
+  border-radius: 20px;
+  box-shadow: 0px 0px 50px 0px #bdbdbd;
+}
+@media (max-width: 1080px) {
+  .signup-wrapper {
+    width: 60%;
+  }
+}
+.signup-wrapper > form {
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+.custom-control {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
