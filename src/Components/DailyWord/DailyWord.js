@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import './style.scss';
 import { Container, Row, Col } from 'reactstrap';
-import { ICategory } from './DailyWord.types';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faVolumeUp } from '@fortawesome/free-solid-svg-icons/faVolumeUp';
 
-const DailyWord: React.FunctionComponent = () => {
-  const [word, setWord] = useState<ICategory>();
+const DailyWord = () => {
+  const [word, setWord] = useState();
   const getCategories = () => {
     const dataUrl = '/data/dailyWord.json';
     fetch(dataUrl, {
@@ -16,13 +15,13 @@ const DailyWord: React.FunctionComponent = () => {
         Accept: 'application/json',
       },
     })
-      .then((response: Response): Promise<ICategory> => {
+      .then((response) => {
         return response.json();
       })
-      .then((data: ICategory) => {
+      .then((data) => {
         setWord(data);
       })
-      .catch((e: Error) => {
+      .catch((e) => {
         console.error(e);
       });
   };

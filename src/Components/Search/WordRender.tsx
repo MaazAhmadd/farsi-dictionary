@@ -42,7 +42,7 @@ const WordRender: React.FunctionComponent<IWordRender> = ({ words, lang }: IWord
         {wordAudio && (
           <span className="audio-icon">
             <FontAwesomeIcon
-              icon={faVolumeUp}
+              icon={faVolumeUp as any}
               onClick={() => {
                 const audio = new Audio(`english_audio/${wordAudio}`);
                 audio.play().then(() => {});
@@ -90,7 +90,7 @@ const WordRender: React.FunctionComponent<IWordRender> = ({ words, lang }: IWord
                                 {audioFile && (
                                   <span className="audio-icon">
                                     <FontAwesomeIcon
-                                      icon={faVolumeUp}
+                                      icon={faVolumeUp as any}
                                       onClick={() => {
                                         const audio = new Audio(`farsi_audio/${audioFile}`);
                                         audio.play().then(() => {});

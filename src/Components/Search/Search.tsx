@@ -186,7 +186,7 @@ const Search: React.FunctionComponent = (): JSX.Element => {
                 innerRef={searchInput}
                 onFocus={() => setIsComponentVisible(true)}
               />
-              <FontAwesomeIcon icon={faSearch} />
+              <FontAwesomeIcon icon={faSearch as any} />
               {search && search?.length > 0 && isComponentVisible && (
                 <ul className="search-result">
                   {searchResult && searchResult?.length > 0 ? (
@@ -228,7 +228,7 @@ const Search: React.FunctionComponent = (): JSX.Element => {
             </>
           ) : (
             <div className="selected-no-result">
-              <FontAwesomeIcon icon={faSearch} />
+              <FontAwesomeIcon icon={faSearch as any} />
             </div>
           )}
         </div>

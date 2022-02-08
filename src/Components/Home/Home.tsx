@@ -11,9 +11,9 @@ const Home: React.FunctionComponent = () => {
     <div>
       <Search />
       <CategoryCard />
-      <hr />
+      {/* <hr /> */}
       <PhraseCard />
-      <hr />
+      {/* <hr /> */}
       <DailyWord />
     </div>
   );
